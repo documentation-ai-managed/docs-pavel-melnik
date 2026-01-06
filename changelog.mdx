@@ -1,0 +1,162 @@
+---
+title: Changelog
+description: Track the evolution of Pavel Melnik with details on recent updates, new features, and improvements.
+---
+
+## Recent Updates
+
+Pavel Melnik evolves rapidly to help you manage projects more effectively. Check this changelog regularly to stay informed about new features, bug fixes, and improvements that enhance your team's productivity.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or join the Discord community to get notifications about new releases.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get started with Pavel Melnik in minutes.
+  </Card>
+  <Card title="API Reference" icon="code" href="/authentication">
+    Integrate Pavel Melnik into your apps.
+  </Card>
+  <Card title="Upgrade Guide" icon="arrow-up" href="/quickstart">
+    Learn how to update your installation.
+  </Card>
+</Columns>
+
+## v1.3.0 (2024-11-01)
+
+<Update label="2024-11-01" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time task comments with @mentions for better team collaboration
+- Introduced custom workflows with drag-and-drop automation builder
+- New integrations with Slack and Google Workspace for seamless notifications
+
+## Improvements
+
+- Enhanced dashboard performance by `>40%` with optimized data fetching
+- Improved mobile responsiveness for task boards on all devices
+
+## Bug Fixes
+
+- Fixed sync issues when assigning tasks to multiple team members
+- Resolved notification delays in high-traffic projects
+
+To upgrade, follow these steps:
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+    Export your projects via the dashboard.
+  </Step>
+  <Step title="Update CLI" icon="download">
+````bash
+npm install -g @pavelmelnik/cli@latest
+````
+  </Step>
+  <Step title="Run Migration" icon="settings">
+````bash
+pavelmelnik migrate
+````
+  </Step>
+</Steps>
+
+</Update>
+
+## v1.2.0 (2024-10-15)
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Board templates for Agile, Scrum, and Kanban setups
+- Advanced reporting with export to PDF and CSV
+- Guest user access for external collaborators without full accounts
+
+## Improvements
+
+- Faster search across tasks, projects, and users
+- Better keyboard shortcuts for power users
+
+## Bug Fixes
+
+- Corrected API rate limiting errors during bulk operations
+- Fixed drag-and-drop glitches on task reordering
+
+<CodeGroup tabs="JavaScript,Python">
+````javascript
+// New API endpoint for templates
+const templates = await fetch('https://api.example.com/v1/templates', {
+  headers: { Authorization: `Bearer ${YOUR_API_KEY}` }
+}).then(res => res.json());
+````
+````python
+# New API endpoint for templates
+import requests
+response = requests.get('https://api.example.com/v1/templates', headers={
+    'Authorization': f'Bearer {YOUR_API_KEY}'
+})
+templates = response.json()
+````
+</CodeGroup>
+
+</Update>
+
+## v1.1.0 (2024-09-20)
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Time tracking integrated directly into tasks
+- Role-based permissions for teams (Admin, Editor, Viewer)
+- Webhook support for custom integrations
+
+## Breaking Changes
+
+- Updated authentication to use JWT tokens instead of API keys for new endpoints
+- Migrate your apps using the new auth flow
+
+## Bug Fixes
+
+- Patched security vulnerability in project sharing links
+- Improved error handling for invalid date inputs
+
+<Callout kind="alert">
+  If you use legacy API keys, update to JWT before November 1, 2024.
+</Callout>
+
+</Update>
+
+## How to Stay Updated
+
+Enable auto-updates in your Pavel Melnik dashboard settings or use the CLI command:
+
+````bash
+pavelmelnik check-updates
+````
+
+For full release notes and migration guides, visit the [dashboard](https://dashboard.example.com/releases).
+
+<Tabs>
+  <Tab title="CLI" icon="terminal">
+
+  Monitor updates via CLI:
+
+  ````bash
+  pavelmelnik status --updates
+  ````
+
+  </Tab>
+  <Tab title="Dashboard" icon="monitor">
+
+  Check the updates tab in your project settings.
+
+  </Tab>
+</Tabs>
+
+<Expandable title="Older Versions" default-open="false">
+
+See v1.0.0 and earlier in the [full changelog](https://dashboard.example.com/changelog/full).
+
+</Expandable>
